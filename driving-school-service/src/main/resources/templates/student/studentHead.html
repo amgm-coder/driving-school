@@ -1,0 +1,40 @@
+<div th:fragment="header">
+    <div class="header">
+        <div class="left">
+            <img src="img/adm.png"/><span th:text="${phone}"></span>
+        </div>
+        <div class="right">
+            <a class="fn" th:href="@{/exit}">退出</a>
+        </div>
+    </div>
+    <div class="navi">
+        <ul class="menu" id="me">
+            <li class="f">
+                <a th:href="@{/stuMainPage}">
+                    <img src="img/sMainPage.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/orderStudyCar}">
+                    <img src="img/IStudentCar.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/myOrderPage}">
+                    <img src="img/myOrder.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/goStuModifyPersonInformation}">
+                    <img src="img/sPersonInformation.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/stuModifyPassword}">
+                    <img src="img/sModifyPassword.png"/>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>

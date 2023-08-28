@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='zh' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/findAllStudent.css"/>
+    <link rel="stylesheet" href="css/modify.css"/>
+</head>
+<body>
+<div th:insert="~{admin/adminHead::header}"></div>
+<div class="main">
+    <div class="v"></div>
+    <form th:action="@{/updateStudent}" method="post">
+        <div class="text_info clearfix">
+            <span>ID：</span>
+        </div>
+        <div class="input_info">
+            <input type="text" name="id" th:value="${student.id}" readonly="true"/>
+        </div>
+
+        <div class="text_info clearfix">
+            <span>姓名：</span>
+        </div>
+        <div class="input_info">
+            <input type="text" name="name" th:value="${student.name}"/>
+        </div>
+        <div class="text_info clearfix">
+            <span>性别：</span>
+        </div>
+        <div class="input_info">
+            <input class="cen" name="sex" type="radio"
+            <c:if test="${student.sex=='男'}">checked="checked"</c:if>
+            value="男" /><span class="cen">男</span>
+            <input class="cen" name="sex" type="radio"
+            <c:if test="${student.sex=='女'}">checked="checked"</c:if>
+            value="女" /><span class="cen">女</span>
+        </div>
+        <div class="clearfix text_info">
+            <span>身份证号：</span>
+        </div>
+        <div class="input_info">
+            <input class="width200" name="idCard" type="text" th:value="${student.idCard}"/>
+        </div>
+        <div class="text_info clearfix">
+            <span>手机号：</span>
+        </div>
+        <div class="input_info">
+            <input name="phone" type="text" th:value="${student.phone}"/>
+        </div>
+        <div class="text_info clearfix">
+            <span>报名金额：</span>
+        </div>
+        <div class="input_info">
+            <input name="entryFee" type="text" th:value="${student.entryFee}"/>
+        </div>
+        <div class="text_info clearfix">
+            <span>密码：</span>
+        </div>
+        <div class="input_info">
+            <input name="password" type="password" th:value="${student.password}"/>
+        </div>
+        <div class="clearfix text_info"></div>
+        <div class="input_info">
+            <input class="button_size" type="submit" value="保存"/>
+            <input class="button_size" type="button" value="取消" onclick=" window.history.back();"/>
+        </div>
+    </form>
+</div>
+<div th:insert="~{admin/adminFoot::footer}"></div>
+</body>
+</html>

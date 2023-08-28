@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='zh' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <title></title>
+    <link rel="stylesheet" href="css/findAllStudent.css"/>
+    <link rel="stylesheet" href="css/modify.css"/>
+</head>
+<body>
+<div th:insert="~{admin/adminHead::header}"></div>
+<div class="main">
+    <div class="v"></div>
+    <form th:action="@{/addTime}" method="post">
+
+        <div class="text_info clearfix">
+            <span>起始时间：</span>
+        </div>
+        <div class="input_info">
+            <input type="text" name="startTime"/>
+        </div>
+        <div class="text_info clearfix">
+            <span>结束时间：</span>
+        </div>
+        <div class="input_info">
+            <input type="text" name="endTime"/>
+        </div>
+        <div class="clearfix text_info"></div>
+        <div class="input_info">
+            <input class="button_size" type="submit" value="提交"/>
+            <input class="button_size" type="button" value="取消" onclick=" window.history.back();"/>
+        </div>
+    </form>
+</div>
+<div th:insert="~{admin/adminFoot::footer}"></div>
+</body>
+</html>

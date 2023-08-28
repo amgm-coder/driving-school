@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='zh' xmlns:th='http://www.thymeleaf.org'>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link rel="stylesheet" href="css/findAllStudent.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+<div class="header">
+    <h1>欢迎来到预约系统</h1>
+</div>
+<div class="d">
+    <div class="between"></div>
+    <div class="loginsize">
+        <h2>手机号登录</h2>
+        <div class="login">
+            <form method="post" th:action="@{/login}" th:object="${user}" class="in">
+                <div class="in">
+                    <label for="phone" class="loginLabel"><img
+                            th:src="@{/img/username.png}"
+                            title="会员名"/></label>
+                    <input type="text" th:field="*{phone}" id="phone" class="loginInput" placeholder="会员名/邮箱/手机号">
+                </div>
+                <br><br>
+                <div class="in">
+                    <label for="password" class="loginLabel">
+                        <img th:src="@{/img/password.png}"
+                             title="登录密码"/>
+                    </label>
+                    <input type="password" th:field="*{password}" id="password" class="loginInput">
+                </div>
+                <br><br>
+                <p>登录类型</p>
+
+                <input class="ri" id="stu" type="radio" th:field="*{loginType}" value="1"/>
+                <label for="stu">
+                    <img th:src="@{/img/student.png}" title=""/>
+                </label>
+
+                <input class="ri" id="admin" type="radio" th:field="*{loginType}" value="0"/>
+                <label for="admin">
+                    <img th:src="@{/img/admin.png}" title=""/>
+                </label>
+                <input type="submit" class="b" value="登 录">
+            </form>
+            <!--            <p class="error">${error}</p>-->
+            <!--            <span>${success}</span>-->
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

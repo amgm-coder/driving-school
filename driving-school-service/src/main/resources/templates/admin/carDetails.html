@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='zh' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/findAllStudent.css"/>
+    <link rel="stylesheet" href="css/modify.css"/>
+    <script type="text/javascript" src="js/dynamic.js"></script>
+</head>
+
+<body>
+<div th:insert="~{admin/adminHead::header}"></div>
+<div class="main">
+    <div class="v"></div>
+    <form action method="post" enctype="multipart/form-data">
+        <div class="f_div1">
+            <div class="new_text_info clearfix">
+                <span>牌号：</span>
+            </div>
+            <div class="new_input_info">
+                <span th:text="${car.mark}"></span>
+            </div>
+            <div class="new_text_info clearfix">
+                <span>品牌：</span>
+            </div>
+            <div class="new_input_info">
+                <span th:text="${car.brand}"></span>
+            </div>
+            <div class="new_text_info clearfix">
+                <span>科目：</span>
+            </div>
+            <div class="new_input_info">
+                <span th:text="${car.subject}"></span>
+            </div>
+            <div class="new_text_info clearfix">
+                <span>项目：</span>
+            </div>
+            <div class="new_input_info">
+                <span th:text="${car.item}"></span>
+            </div>
+            <div class="new_text_info clearfix">
+                <span>创建时间：</span>
+            </div>
+            <div class="new_input_info">
+                <span th:text="<fmt:formatDate value=" ${car.createTime}" pattern="yyyy/MM/dd HH:mm:ss"/>"></span>
+            </div>
+
+        </div>
+        <div class="f_div2">
+            <img id="imgs" class="im" src=${car.carPicture }/>
+        </div>
+    </form>
+</div>
+<div th:insert="~{admin/adminFoot::footer}"></div>
+</body>
+
+</html>

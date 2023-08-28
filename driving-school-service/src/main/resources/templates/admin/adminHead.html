@@ -1,0 +1,50 @@
+<div th:fragment="header">
+    <div class="header">
+        <div class="left">
+            <img src="img/adm.png"/><span th:text="${phone}"></span>
+        </div>
+        <div class="right">
+            <a class="fn" th:href="@{/exit}">退出</a>
+        </div>
+    </div>
+    <div class="navi">
+        <ul class="menu" id="me">
+            <li class="f">
+                <a th:href="@{/adminMainPage}">
+                    <img src="img/mainPage.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/findAllStudent}">
+                    <img src="img/studentManage.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/findAllCarPage}">
+                    <img src="img/carManage.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/findAllTimePage}">
+                    <img src="img/timeManage.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/bookingManagement}">
+                    <img src="img/orderManage.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/getPersonInformation}">
+                    <img src="img/personInformation.png"/>
+                </a>
+            </li>
+            <li class="f">
+                <a th:href="@{/goModifyPassword}">
+                    <img src="img/modifyPassword.png"/>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
